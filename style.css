@@ -1,0 +1,732 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+    border:none;
+    font-family: var(--mainFont);
+}
+
+:root{
+    font-size:62.5%;
+
+    --mainFont:'Epilogue', sans-serif;
+
+    --AlmostWhite:hsl(0, 0%, 98%);
+    --MediumGray: hsl(0, 0%, 41%);
+    --AlmostBlack: hsl(0, 0%, 8%);
+}
+
+body{
+    width:100%;
+    height:100vh;
+    font-family: var(--mainFont);
+    background-color: var(--AlmostWhite);
+    overflow-x: hidden;
+    position: relative;
+}
+
+footer{
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:.5rem;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1rem;
+}
+
+.mobileMenuToggle{
+    display:none;
+    width: 4.5rem;
+    height: 3.5rem;
+    background-color: rgba(227, 227, 227, 0.548);
+}
+
+.mobileMenuToggle{
+    transition-duration: 600ms;
+    transition-property: background-color;
+}
+
+.firstHamburguerRow{
+    transition-duration: 400ms;
+    transition-property: transform;
+}
+
+.secondHamburguerRow{
+    transition-duration: 600ms;
+    transition-property: background-color;
+}
+
+.thirdHamburguerRow{
+    transition-duration: 400ms;
+    transition-property: transform;
+}
+
+.blackScr{
+    display: none;
+}
+
+/* MENU ***************************************************************************************/
+
+header{
+    width:100%;
+    height:8rem;
+    display: grid;
+    grid-template-rows:1fr;
+    grid-template-columns:13rem 1fr;
+    grid-template-areas: "logo menu";
+    align-items: center;
+}
+
+.SnapLogo{
+    grid-area:logo;
+    margin-left: 3rem;
+    cursor: pointer;
+}
+
+.menu{
+    grid-area:menu;
+    height:100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "menuItems registerAndLogin";
+    z-index: 1001;
+}
+
+.menuOptions{
+    height:100%;
+    grid-area: menuItems;
+}
+
+.menuUList{
+    list-style: none;
+    height:100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:.5rem;
+    margin-left: 3rem;
+}
+
+.toggleMenuContentWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.menuItem{
+    font-size: 1.2rem;
+    color: var(--MediumGray);
+    height: 50%;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuItemAbout{
+    width: 6.5rem;
+}
+
+.menuItemCarrers{
+    width: 8rem;
+}
+
+.menuItem:hover .toggleMenuContent, .menuItem:hover .menuItemContent{
+    color: var(--AlmostBlack);
+    font-weight: 700;
+}
+
+.menuItem:hover .toggleMenuFeatures{
+    height: 14.2rem;
+}
+
+.menuItem:hover .toggleMenuCompany{
+    height: 9.5rem;
+}
+
+.contentAndMenuWrapper{
+    height: 100%;
+}
+
+.toggleMenuContentWrapper, .menuItemCarrers, .menuItemAbout{
+    height: 100%;
+    cursor: pointer;
+}
+
+.toggleMenuContentWrapper{
+    width: 100px;
+}
+
+.toggleMenuContent, .menuItemContent{
+    width: 5.6rem;
+}
+
+.menuArrow{
+    transition-duration: 300ms;
+    transition-property: transform;
+}
+
+.menuItem:hover .menuArrow{
+    transform: rotate(180deg);
+}
+
+.registerAndLoginWrapper{
+    height: 100%;
+    grid-area: registerAndLogin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.registerAndLoginButton{
+    color: var(--MediumGray);
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 8.8rem;
+    height: 3.8rem;
+    border-radius: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.registerButton{
+    border:2px solid var(--MediumGray);
+    transition-duration: 200ms;
+    transition-property: background-color, color;
+}
+
+.registerButton:hover{
+    background-color: var(--MediumGray);
+    color: white;
+}
+
+.loginButton:hover{
+    color: var(--AlmostBlack);
+}
+
+.toggleMenu{
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.238);
+    border-radius: 1rem;
+    top: 3rem;
+    overflow-y: hidden;
+}
+
+.contentAndMenuWrapper{
+    position: relative;
+}
+
+.toggleMenuFeatures{
+    right: .1rem;
+    width: 12rem;
+    height: 0;
+    gap: .8rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    transition-duration: 400ms;
+    transition-property: height;
+}
+
+.toggleMenuCompany{
+    width: 9rem;
+    height: 0;
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    transition-duration: 400ms;
+    transition-property: height;
+}
+
+.toggleMenuCompanyItem{
+    cursor: pointer;
+    margin-left: 1.5rem;
+}
+
+.toggleMenuCompanyItemContent{
+    transition-duration: 300ms;
+    transition-property: font-weight, color;
+}
+
+.toggleMenuCompanyItem:hover .toggleMenuCompanyItemContent{
+    font-weight: 700;
+    color: var(--AlmostBlack);
+}
+
+.toggleMenuFeaturesItem{
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
+    cursor: pointer;
+}
+
+.toggleMenuFeaturesItemContent{
+    margin-left: .5rem;
+    transition-duration: 300ms;
+    transition-property: font-weight, color;
+}
+
+.toggleMenuFeaturesItem:hover .toggleMenuFeaturesItemContent{
+    font-weight: 700;
+    color: var(--AlmostBlack);
+}
+
+.toggleMenuFeaturesItemIcon{
+    width: 2rem;
+}
+
+/* MAIN **********************************************************************/
+
+main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainContentWrapper{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "content image";
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.mainContent{
+    display: grid;
+    grid-area: content;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1.5fr 10rem;
+    grid-template-areas: "title" "contenText" "clients";
+}
+
+.mainImage{
+    width: 40rem;
+    justify-self: center;
+    background-image: url(images/image-hero-desktop.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.mainContentTitle{
+    grid-area: title;
+    align-self: end;
+    margin-bottom: 3rem;
+}
+
+.mainContentTitlePart{
+    font-weight: bold;
+    font-size: 7rem;
+    display: block;
+}
+
+.mainTextWrapper{
+    grid-area: contenText;
+    width: 40rem;
+    line-height: 2.4rem;
+    align-self: center;
+}
+
+.mainText{
+    font-size: 1.6rem;
+    color: var(--MediumGray);
+}
+
+.mainContentButton{
+    background-color: var(--AlmostBlack);
+    border: 2px solid var(--AlmostBlack);
+    color: white;
+    width: 12rem;
+    height: 4rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition-duration: 300ms;
+    transition-property: background-color, color;
+    font-weight: bold;
+    display: block;
+    margin-top: 4rem;
+}
+
+.mainContentButton:hover{
+    background-color: white;
+    color: var(--AlmostBlack);
+}
+
+.clientsCard{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 4rem;
+    grid-area: clients;
+    align-self: end;
+}
+
+.clientImage{
+    width: 8rem;
+}
+
+.clientImageAudioPhile{
+    width: 6.4rem;
+}
+
+/* Media Query ****************************************************************/
+
+@media(max-width:1055px) {
+    .mainContentWrapper{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "image" "content";
+        margin-top: 2rem;
+        gap: 5rem;
+    }
+
+    body{
+        height: auto;
+    }
+
+    footer{
+        position: static;
+        margin-top: 8rem;
+    }
+
+    .mainContent{
+        justify-items: center;
+    }
+
+    .mainContentTitleFirstPart{
+        text-align: center;
+    }
+
+    .mainTextWrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mainText{
+        text-align: center;
+    }
+
+    .mainImage{
+        height: 100%;
+        width: 100%;
+        background-image: url(images/image-hero-mobile.png);
+    }
+}
+
+@media(max-width:770px){
+
+    header{
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 13rem 1fr 1rem;
+        grid-template-areas: "logo hamburguer menu";
+        align-items: center;
+        position: relative;
+    }
+
+    .mobileMenuToggle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: .4rem;
+        grid-area: hamburguer;
+        justify-self: end;
+        cursor: pointer;
+        border-radius: .4rem;
+        z-index: 1002;
+    }
+
+    .hamburguerRow{
+        width: 3rem;
+        height: .25rem;
+        background-color: black;
+        border-radius: .2rem;
+    }
+
+    .menu{
+        height: 100vh;
+        width: 0;
+        background-color: white;
+        grid-template-rows: 3fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "menuItems" "registerAndLogin";
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .menuOptions{
+        height: 100%;
+        width: 100%;
+    }
+
+    .menuUList{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .5rem;
+        margin-left: 0;
+        margin-top: 10rem;
+    }
+
+    .menuItem{
+        height: 3rem;
+        width: 40%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1.6rem;
+        margin-left: 2rem;
+    }
+
+    .toggleMenuContent{
+        width: 100%;
+    }
+
+    .registerAndLoginWrapper{
+        height: 100%;
+        grid-area: registerAndLogin;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .toggleMenu{
+        position: static;
+        overflow-y: visible;
+        box-shadow: none;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .toggleMenuFeatures{
+        height: 16.2rem;
+        width: 14rem;
+        display: none;
+        transition: none;
+    }
+    
+    .toggleMenuCompany{
+        height: 11.5rem;
+        width: 10rem;
+        display: none;
+        transition: none;
+    }
+
+    .contentAndMenuWrapper{
+        height: auto;
+    }
+
+    .toggleMenuContentWrapper{
+        width: 9.4rem;
+        margin-bottom: .5rem;
+    }
+
+    .toggleMenuContentWrapperFeatures{
+        margin-bottom: 1.2rem;
+    }
+
+    .menuItemToggleMenu{
+        height: auto;
+    }
+
+    .menuItem:hover .toggleMenuFeatures{
+        height:  14rem;
+    }
+    
+    .menuItem:hover .toggleMenuCompany{
+        height: 9rem;
+    }
+
+    .menuItem:hover .menuArrow{
+        transform: none;
+    }
+
+    .toggleMenuCompanyItem:hover .toggleMenuCompanyItemContent{
+        font-weight: 500;
+        color: var(--MediumGray);
+    }
+
+    .toggleMenuFeaturesItem:hover .toggleMenuFeaturesItemContent{
+        font-weight: 500;
+        color: var(--MediumGray);
+    }
+
+    .menuItem:hover .toggleMenuContent, .menuItem:hover .menuItemContent{
+        font-weight: 500;
+        color: var(--MediumGray);
+    }
+
+    .mainContentTitleSecondPart{
+        text-align: center;
+    }
+
+    .mainContentWrapper{
+        gap: 5rem;
+    }
+}
+
+@media(max-width:500px){
+    .mainImage{
+        height: 100%;
+        width: 100%;
+        background-image: url(images/image-hero-mobile.png);
+    }
+
+    .menu{
+        width: 0;
+    }
+
+    .menuItem{
+        width: 40%;
+        font-size: 1.1rem;
+    }
+
+    .registerAndLoginButton{
+        width: 7rem;
+        font-size: 1rem;
+    }
+
+    .main{
+        height: auto;
+    }
+
+    .mainContentWrapper{
+        grid-template-columns: 100vw;
+        grid-template-rows: 46rem 450px;
+        grid-template-areas: "image" "content";
+        margin-top: 2rem;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .toggleMenu{
+        gap: 1rem;
+        margin: 0;
+    }
+
+    .toggleMenuFeatures{
+        height: 14rem;
+    }
+
+    .toggleMenuCompany{
+        height: 9rem;
+    }
+
+    .mainContentTitle{
+        justify-self: center;
+    }
+
+    .mainContentTitlePart{
+        font-size: 4rem;
+    }
+
+    .mainContent{
+        justify-items: start;
+        width: 30rem;
+        grid-template-columns: 100%;
+        width:100%;
+    }
+
+    .mainTextWrapper{
+        width: 100%;
+    }
+
+    .mainText{
+        font-size: 1.4rem;
+        width: 20rem;
+    }
+
+    .clientImage{
+        width: 5rem;
+        margin-left: .5rem;
+    }
+
+    .clientsCard{
+        gap: 1rem;
+        margin-top: 4rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .mainContentWrapper{
+        gap: 1rem;
+    }
+
+    .menuIconImage{
+        width: 70%;
+    }
+}
+
+@media(max-width:400px){
+    .mainContentWrapper{
+        grid-template-rows: 30rem 450px;
+    }
+}
+
+/* Javascript Modifications **************************************************************/
+
+.menuActive770{
+    width: 30rem;
+}
+
+.menuActive500{
+    width: 20rem;
+}
+
+.firstRowActive{
+    position: relative;
+    top: 7px;
+    transform: rotate(220deg);
+}
+
+.secondRowActive{
+    background-color: transparent;
+}
+
+.thirdRowActive{
+    position: relative;
+    bottom: 6px;
+    transform: rotate(-220deg);
+}
+
+.activeMobileHamburguer{
+    background-color: transparent;
+}
+
+.bodyMenuActive{
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.blackScreenActive{
+    display: block;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.541);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.subMenuActive{
+    display: flex;
+}

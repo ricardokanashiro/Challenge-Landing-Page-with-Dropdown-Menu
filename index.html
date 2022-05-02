@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+</head>
+<body>
+
+  <div class="blackScr"></div>
+
+  <header class="header">
+    <img src="images/logo.svg" class="SnapLogo">
+
+    <button class="mobileMenuToggle">
+      <div class="hamburguerRow firstHamburguerRow"></div>
+      <div class="hamburguerRow secondHamburguerRow"></div>
+      <div class="hamburguerRow thirdHamburguerRow"></div>
+    </button>
+
+    <div class="menu">
+
+      <nav class="menuOptions">
+
+        <ul class="menuUList">
+
+          <li class="menuItem menuItemToggleMenu">
+            <div class="contentAndMenuWrapper">
+
+              <div class="toggleMenuContentWrapper toggleMenuContentWrapperFeatures">
+                <span class="toggleMenuContent">Features</span>
+                <img src="images/icon-arrow-down.svg" class="menuArrow" alt="Hover to see more options!">
+              </div>
+
+              <div class="toggleMenu toggleMenuFeatures">
+
+                <div class="toggleMenuFeaturesItem">
+                  <div class="toggleMenuFeaturesItemIcon">
+                    <img src="images/icon-todo.svg" alt="Todo List Item" class="menuIconImage">
+                  </div>
+
+                  <span class="toggleMenuFeaturesItemContent">Todo List</span>
+                </div>
+
+                <div class="toggleMenuFeaturesItem">
+                  <div class="toggleMenuFeaturesItemIcon">
+                    <img src="images/icon-calendar.svg" alt="Calendar Item" class="menuIconImage">
+                  </div>
+
+                  <span class="toggleMenuFeaturesItemContent">Calendar</span>
+                </div>
+
+                <div class="toggleMenuFeaturesItem">
+                  <div class="toggleMenuFeaturesItemIcon">
+                    <img src="images/icon-reminders.svg" alt="Reminders Item" class="menuIconImage">
+                  </div>
+
+                  <span class="toggleMenuFeaturesItemContent">Reminders</span>
+                </div>
+
+                <div class="toggleMenuFeaturesItem">
+                  <div class="toggleMenuFeaturesItemIcon">
+                    <img src="images/icon-planning.svg" alt="Planning Item" class="menuIconImage">
+                  </div>
+
+                  <span class="toggleMenuFeaturesItemContent">Planning</span>
+                </div>
+
+              </div>
+
+            </div>
+          </li>
+
+          <li class="menuItem menuItemToggleMenu">
+            <div class="contentAndMenuWrapper">
+
+              <div class="toggleMenuContentWrapper toggleMenuContentWrapperCompany">
+                <span class="toggleMenuContent">Company</span>
+                <img src="images/icon-arrow-down.svg" class="menuArrow" alt="Hover to see more options!">
+              </div>
+
+              <div class="toggleMenu toggleMenuCompany">
+
+                <div class="toggleMenuCompanyItem">
+                  <span class="toggleMenuCompanyItemContent">History</span>
+                </div>
+
+                <div class="toggleMenuCompanyItem">
+                  <span class="toggleMenuCompanyItemContent">OurTeam</span>
+                </div>
+
+                <div class="toggleMenuCompanyItem">
+                  <span class="toggleMenuCompanyItemContent">Blog</span>
+                </div>
+
+              </div>
+
+            </div>
+          </li>
+
+          <li class="menuItem menuItemCarrers">
+              <span class="menuItemContent">Carrers</span>
+          </li>
+
+          <li class="menuItem menuItemAbout">
+              <span class="menuItemContent">About</span>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="registerAndLoginWrapper">
+
+        <button class="registerAndLoginButton loginButton">Login</button>
+        
+        <button class="registerAndLoginButton registerButton">Register</button>
+
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="mainContentWrapper">
+      <div class="mainContent">
+
+        <div class="mainContentTitle">
+          <span class="mainContentTitleFirstPart mainContentTitlePart">Make</span>
+          <span class="mainContentTitleSecondPart mainContentTitlePart">Remote Work</span>
+        </div>
+
+        <div class="mainTextWrapper">
+          <span class="mainText">
+            Get your team in sync, no matter your location. Streamline processes, 
+            create team rituals, and watch productivity soar.
+          </span>
+
+          <button class="mainContentButton">Learn more</button>
+        </div>
+
+        <div class="clientsCard">
+          <img src="images/client-databiz.svg" alt="" class="clientImage">
+          <img src="images/client-audiophile.svg" alt="" class="clientImage clientImageAudioPhile">
+          <img src="images/client-meet.svg" alt="" class="clientImage">
+          <img src="images/client-maker.svg" alt="" class="clientImage">
+        </div>
+  
+      </div>
+
+      <div class="mainImage"></div>
+
+      </div>
+    </div>
+    
+  </main>
+  
+  <footer>
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Ricardo Kanashiro</a>.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
